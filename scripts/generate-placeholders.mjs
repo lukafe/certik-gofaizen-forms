@@ -53,6 +53,9 @@ const clients = [
   ["Sei", "sei"], ["Aethir", "aethir"], ["peaq", "peaq"], ["Bitcoin.com", "bitcoin-com"],
   ["Wormhole", "wormhole"], ["1inch", "1inch"], ["Venus", "venus"], ["BloFin", "blofin"],
   ["Floki", "floki"], ["WalletConnect", "walletconnect"], ["Sui", "sui"], ["Kaia", "kaia"],
+  // Case-study carousel extras
+  ["LINE", "line"], ["Ethereum Foundation", "ethereum-foundation"],
+  ["Delphinus Lab", "delphinus-lab"],
 ];
 
 const investors = [

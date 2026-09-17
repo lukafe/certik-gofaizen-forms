@@ -11,9 +11,9 @@ const c = (name: string, slug: string): ClientLogo => ({
 
 /**
  * Client logo marquee — order matches certik.com as of the brief.
- * The strip is split into two rows: row one scrolls left, row two right.
- * All current files are text placeholders; replace with official
- * monochrome/white SVGs from CertiK's media kit (see README TODO list).
+ * Single infinite row, as on the live LP. All current files are text
+ * placeholders; replace with official monochrome/white SVGs from
+ * CertiK's media kit (see README TODO list).
  */
 export const clients: ClientLogo[] = [
   c("Binance", "binance"),
@@ -52,10 +52,4 @@ export const clients: ClientLogo[] = [
   c("WalletConnect", "walletconnect"),
   c("Sui", "sui"),
   c("Kaia", "kaia"),
-];
-
-/** First half scrolls left, second half scrolls right (two-row strip). */
-export const clientRows: [ClientLogo[], ClientLogo[]] = [
-  clients.slice(0, Math.ceil(clients.length / 2)),
-  clients.slice(Math.ceil(clients.length / 2)),
 ];

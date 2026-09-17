@@ -1,45 +1,36 @@
-import { clientRows } from "@/config/clients";
+import { clients } from "@/config/clients";
 import { site } from "@/content/site";
+import { CaseStudies } from "./CaseStudies";
 import { Logo } from "./Logo";
 
-function Row({
-  logos,
-  reverse,
-}: {
-  logos: { name: string; file: string }[];
-  reverse?: boolean;
-}) {
-  // The track holds the logo set twice; the keyframes translate by -50%,
-  // so the loop is seamless. Pausing on hover is handled in globals.css.
-  const track = [...logos, ...logos];
-  return (
-    <div className="marquee-mask overflow-hidden">
-      <div
-        className={`marquee-track flex w-max items-center gap-14 py-4 pr-14 ${
-          reverse ? "animate-marquee-reverse" : "animate-marquee"
-        }`}
-      >
-        {track.map((logo, i) => (
-          <Logo
-            key={`${logo.name}-${i}`}
-            src={logo.file}
-            alt={logo.name}
-            height={26}
-            aria-hidden={i >= logos.length || undefined}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
-
+/**
+ * Single infinite logo row, as on certik.com's LP, with the case-study
+ * card carousel right below it. The track holds the logo set twice and
+ * the keyframes translate by -50%, so the loop is seamless. Pause on
+ * hover and reduced-motion handling live in globals.css.
+ */
 export function LogoMarquee() {
-  const [rowOne, rowTwo] = clientRows;
+  const track = [...clients, ...clients];
   return (
-    <section className="border-y border-line bg-ink py-12">
+    <section className="border-y border-line bg-ink py-14">
       <p className="eyebrow mb-8 text-center">{site.clientsStrip.eyebrow}</p>
-      <Row logos={rowOne} />
-      <Row logos={rowTwo} reverse />
+      <div className="marquee-mask overflow-hidden">
+        <div
+          className="marquee-track flex w-max items-center gap-14 py-4 pr-14 animate-marquee"
+          style={{ "--marquee-duration": "90s" } as React.CSSProperties}
+        >
+          {track.map((logo, i) => (
+            <Logo
+              key={`${logo.name}-${i}`}
+              src={logo.file}
+              alt={logo.name}
+              height={26}
+              aria-hidden={i >= clients.length || undefined}
+            />
+          ))}
+        </div>
+      </div>
+      <CaseStudies />
     </section>
   );
 }
