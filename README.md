@@ -82,7 +82,7 @@ hard guarantees.
 | Trust badges | `config/badges.ts` |
 | Investor grid | `config/investors.ts` |
 | Partner benefits + product strip | `config/benefits.ts` |
-| Contact cards + Calendly URL | `config/contacts.ts` |
+| Contact cards + booking links | `config/contacts.ts` |
 | Form option lists | `config/form.ts` |
 | Design tokens (colors, radius, font, marquee speed) | `styles/tokens.css` + `tailwind.config.ts` |
 
@@ -119,7 +119,6 @@ changes needed. The marquee renders all logos at a consistent 26px height.
       until these files exist)
 
 **Content placeholders (search the repo for `[` brackets):**
-- [ ] Calendly URL → `config/contacts.ts`
 - [ ] Confirm the `[48h]` response-time promise → `content/site.ts` + `config/benefits.ts`
 - [ ] Benefits 3 & 4 of the partner package → `config/benefits.ts`
 - [ ] Notification recipients (`NOTIFY_EMAIL_TO`) and verified sender domain

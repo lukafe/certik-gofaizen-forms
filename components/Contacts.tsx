@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { bookCallUrl, contacts, type Contact } from "@/config/contacts";
+import { contacts, type Contact } from "@/config/contacts";
 import { site } from "@/content/site";
 
 /**
@@ -101,7 +101,7 @@ export function Contacts() {
               </div>
 
               <a
-                href={bookCallUrl}
+                href={person.bookCall}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary mt-6 w-full"
