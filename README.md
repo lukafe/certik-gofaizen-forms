@@ -119,7 +119,6 @@ changes needed. The marquee renders all logos at a consistent 26px height.
       until these files exist)
 
 **Content placeholders (search the repo for `[` brackets):**
-- [ ] Joe's title → `config/contacts.ts`
 - [ ] Calendly URL → `config/contacts.ts`
 - [ ] Confirm the `[48h]` response-time promise → `content/site.ts` + `config/benefits.ts`
 - [ ] Benefits 3 & 4 of the partner package → `config/benefits.ts`

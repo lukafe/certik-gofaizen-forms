@@ -23,7 +23,7 @@ export const contacts: Contact[] = [
   },
   {
     name: "Joe Suzuki",
-    title: "[Title]",
+    title: "Business Development Manager",
     company: "CertiK",
     email: "joe.suzuki@certik.com",
     telegram: "@josukisuki",
