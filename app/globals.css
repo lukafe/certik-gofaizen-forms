@@ -41,6 +41,18 @@ body {
   }
 }
 
+/* Faint data-grid backdrop (skynet.certik.com-style), fading out downward */
+.hero-grid {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 65%);
+  mask-image: linear-gradient(to bottom, black 0%, transparent 65%);
+}
+
 /* Edge fade for logo strips, like certik.com's client band */
 .marquee-mask {
   -webkit-mask-image: linear-gradient(

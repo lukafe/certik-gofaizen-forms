@@ -72,4 +72,10 @@ export const products: Product[] = [
     description: "Mathematical proofs of smart contract correctness.",
     href: "https://www.certik.com/products/formal-verification",
   },
+  {
+    name: "Not Sure Where to Start?",
+    description:
+      "Tell us about your project and we'll scope the right services together.",
+    href: "#intake",
+  },
 ];

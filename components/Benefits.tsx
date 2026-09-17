@@ -11,33 +11,41 @@ export function Benefits() {
           <p className="mt-5 text-fg-muted">{site.offer.subtitle}</p>
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {benefits.map((benefit) => (
-            <div
-              key={benefit.title}
-              className={
-                benefit.highlighted
-                  ? "card relative border-accent/40 bg-accent-soft p-8 md:col-span-2 lg:col-span-1 lg:row-span-1"
-                  : "card p-8"
-              }
-            >
-              {benefit.highlighted && (
-                <span className="absolute right-6 top-6 rounded-pill bg-accent px-3 py-1 text-xs font-bold text-ink-deep">
+        {/* Symmetric layout: highlighted discount card full-width on top,
+            remaining benefits in an equal row below. */}
+        <div className="mt-14 grid gap-6">
+          {benefits
+            .filter((b) => b.highlighted)
+            .map((benefit) => (
+              <div
+                key={benefit.title}
+                className="card relative border-accent/40 bg-accent-soft p-8 text-center sm:p-10"
+              >
+                <span className="mx-auto mb-4 inline-block rounded-pill bg-accent px-3 py-1 text-xs font-bold text-ink-deep">
                   Partner offer
                 </span>
-              )}
-              <h3
-                className={`pr-24 text-lg font-semibold ${
-                  benefit.highlighted ? "text-accent" : "text-fg"
-                }`}
-              >
-                {benefit.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-fg-muted">
-                {benefit.description}
-              </p>
-            </div>
-          ))}
+                <h3 className="text-2xl font-semibold text-accent">
+                  {benefit.title}
+                </h3>
+                <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-fg-muted">
+                  {benefit.description}
+                </p>
+              </div>
+            ))}
+          <div className="grid gap-6 sm:grid-cols-3">
+            {benefits
+              .filter((b) => !b.highlighted)
+              .map((benefit) => (
+                <div key={benefit.title} className="card p-8 text-center">
+                  <h3 className="text-lg font-semibold text-fg">
+                    {benefit.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-fg-muted">
+                    {benefit.description}
+                  </p>
+                </div>
+              ))}
+          </div>
         </div>
 
         {/* Product strip */}
@@ -47,13 +55,14 @@ export function Benefits() {
             <h2 className="section-title mt-4">{site.services.title}</h2>
             <p className="mt-5 text-fg-muted">{site.services.subtitle}</p>
           </div>
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {products.map((product) => (
               <a
                 key={product.name}
                 href={product.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...(product.href.startsWith("http")
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
                 className="card group flex flex-col p-6"
               >
                 <h3 className="text-sm font-semibold text-fg">

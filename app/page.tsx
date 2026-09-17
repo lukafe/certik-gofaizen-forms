@@ -5,7 +5,6 @@ import { TrustBadges } from "@/components/TrustBadges";
 import { Partnership } from "@/components/Partnership";
 import { Benefits } from "@/components/Benefits";
 import { Investors } from "@/components/Investors";
-import { Testimonials } from "@/components/Testimonials";
 import { CtaBand } from "@/components/CtaBand";
 import { IntakeForm } from "@/components/IntakeForm";
 import { Contacts } from "@/components/Contacts";
@@ -22,7 +21,6 @@ export default function Page() {
         <Partnership />
         <Benefits />
         <Investors />
-        <Testimonials />
         <CtaBand />
         <IntakeForm />
         <Contacts />

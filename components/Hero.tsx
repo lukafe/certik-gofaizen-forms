@@ -5,7 +5,7 @@ import { StatCounters } from "./StatCounters";
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-ink-deep">
-      {/* Subtle radial glow behind the headline, like certik.com's hero */}
+      {/* Subtle radial glow + faint data-grid, echoing skynet.certik.com */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
@@ -14,9 +14,10 @@ export function Hero() {
             "radial-gradient(60% 50% at 50% 0%, rgba(120,150,255,0.10) 0%, rgba(0,0,0,0) 70%)",
         }}
       />
+      <div aria-hidden className="hero-grid pointer-events-none absolute inset-0" />
       <div className="relative mx-auto max-w-site px-4 pb-20 pt-20 text-center sm:px-6 sm:pt-28">
         <div className="animate-fade-up">
-          <CertikGsLockup height={28} />
+          <CertikGsLockup height={40} />
         </div>
 
         <div

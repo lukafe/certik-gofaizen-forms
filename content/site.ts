@@ -75,11 +75,6 @@ export const site = {
     eyebrow: "Backed by Leading Investors",
   },
 
-  testimonials: {
-    eyebrow: "Testimonials",
-    title: "Trusted by Thousands of Web3 Projects",
-  },
-
   ctaBand: {
     title: "Ready to Secure Your Project?",
     subtitle:

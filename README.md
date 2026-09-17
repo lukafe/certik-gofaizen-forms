@@ -81,7 +81,6 @@ hard guarantees.
 | Client logo marquee (names, order, rows) | `config/clients.ts` |
 | Trust badges | `config/badges.ts` |
 | Investor grid | `config/investors.ts` |
-| Testimonials | `config/testimonials.ts` |
 | Partner benefits + product strip | `config/benefits.ts` |
 | Contact cards + Calendly URL | `config/contacts.ts` |
 | Form option lists | `config/form.ts` |
@@ -118,7 +117,6 @@ changes needed. The marquee renders all logos at a consistent 26px height.
 - [ ] Photos of Lucas and Joe → `public/photos/`
 
 **Content placeholders (search the repo for `[` brackets):**
-- [ ] Real testimonial quotes/names/titles from the certik.com carousel → `config/testimonials.ts`
 - [ ] Joe's surname, title, and both contacts' email/Telegram/WhatsApp/LinkedIn → `config/contacts.ts`
 - [ ] Calendly URL → `config/contacts.ts`
 - [ ] Confirm the `[48h]` response-time promise → `content/site.ts` + `config/benefits.ts`
