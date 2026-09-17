@@ -4,33 +4,32 @@ export type Contact = {
   company: string;
   email: string;
   telegram?: string;
-  whatsapp?: string;
   linkedin?: string;
-  /** Photo under /public/photos/ — a neutral placeholder ships by default */
+  /** Photo under /public/photos/ — falls back to the placeholder avatar if missing */
   photo: string;
+  fallbackPhoto: string;
 };
 
-/** Contact cards. All [bracketed] values are placeholders to replace. */
 export const contacts: Contact[] = [
   {
     name: "Lucas Ceccon",
     title: "Director of New Business",
     company: "CertiK",
-    email: "[lucas@certik.com]",
-    telegram: "[@telegram-handle]",
-    whatsapp: "[+0 000 000 0000]",
-    linkedin: "[linkedin.com/in/...]",
-    photo: "/photos/lucas.svg",
+    email: "lucas.ceccon@certik.com",
+    telegram: "@LucasCecconn",
+    linkedin: "https://www.linkedin.com/in/lucas-ceccon-023a3a240/",
+    photo: "/photos/lucas.jpg",
+    fallbackPhoto: "/photos/lucas.svg",
   },
   {
-    name: "Joe [Surname]",
+    name: "Joe Suzuki",
     title: "[Title]",
     company: "CertiK",
-    email: "[joe@certik.com]",
-    telegram: "[@telegram-handle]",
-    whatsapp: "[+0 000 000 0000]",
-    linkedin: "[linkedin.com/in/...]",
-    photo: "/photos/joe.svg",
+    email: "joe.suzuki@certik.com",
+    telegram: "@josukisuki",
+    linkedin: "https://www.linkedin.com/in/joe-suzuki-5a0851243/",
+    photo: "/photos/joe.jpg",
+    fallbackPhoto: "/photos/joe.svg",
   },
 ];
 

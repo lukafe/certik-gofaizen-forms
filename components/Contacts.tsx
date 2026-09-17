@@ -1,8 +1,36 @@
 "use client";
 
-import { useState } from "react";
-import { bookCallUrl, contacts } from "@/config/contacts";
+import { useEffect, useRef, useState } from "react";
+import { bookCallUrl, contacts, type Contact } from "@/config/contacts";
 import { site } from "@/content/site";
+
+/**
+ * Photo with placeholder fallback. The onError handler alone isn't
+ * enough: for a missing file the error event fires before React
+ * hydrates, so we also verify naturalWidth after mount.
+ */
+function ContactPhoto({ person }: { person: Contact }) {
+  const [src, setSrc] = useState(person.photo);
+  const ref = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const img = ref.current;
+    if (img && img.complete && img.naturalWidth === 0) {
+      setSrc(person.fallbackPhoto);
+    }
+  }, [person.fallbackPhoto]);
+
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      ref={ref}
+      src={src}
+      alt={`Photo of ${person.name}`}
+      onError={() => setSrc(person.fallbackPhoto)}
+      className="h-20 w-20 rounded-full border border-line-strong object-cover"
+    />
+  );
+}
 
 export function Contacts() {
   const copy = site.contacts;
@@ -30,12 +58,7 @@ export function Contacts() {
         <div className="mx-auto mt-14 grid max-w-3xl gap-6 sm:grid-cols-2">
           {contacts.map((person) => (
             <div key={person.name} className="card flex flex-col p-8">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={person.photo}
-                alt={`Photo of ${person.name}`}
-                className="h-20 w-20 rounded-full border border-line-strong object-cover"
-              />
+              <ContactPhoto person={person} />
               <h3 className="mt-5 text-lg font-semibold text-fg">
                 {person.name}
               </h3>
@@ -56,15 +79,24 @@ export function Contacts() {
                   </span>
                 </button>
                 {person.telegram && (
-                  <p className="text-fg-muted">
-                    <span aria-hidden>◈</span> Telegram / WhatsApp:{" "}
-                    {person.telegram}
-                  </p>
+                  <a
+                    href={`https://t.me/${person.telegram.replace(/^@/, "")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-fit text-fg-muted transition-colors duration-150 hover:text-fg"
+                  >
+                    <span aria-hidden>◈</span> Telegram: {person.telegram}
+                  </a>
                 )}
                 {person.linkedin && (
-                  <p className="text-fg-muted">
-                    <span aria-hidden>in</span> LinkedIn: {person.linkedin}
-                  </p>
+                  <a
+                    href={person.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-fit text-fg-muted transition-colors duration-150 hover:text-fg"
+                  >
+                    <span aria-hidden>in</span> LinkedIn ↗
+                  </a>
                 )}
               </div>
 

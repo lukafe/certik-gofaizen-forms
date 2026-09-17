@@ -114,10 +114,12 @@ changes needed. The marquee renders all logos at a consistent 26px height.
 - [ ] G&S white logo → `public/logos/gs.svg`
 - [ ] All 36 client marquee logos → `public/logos/clients/` (binance, tether, okx, apple, samsung, ripple, crypto-com, pancakeswap, cardano, fireblocks, aptos, ton, gala, the-sandbox, ethereum, wemix, bitget, trust-wallet, paxos, pepe, hedera, ondo, frax, ant-group, sei, aethir, peaq, bitcoin-com, wormhole, 1inch, venus, blofin, floki, walletconnect, sui, kaia)
 - [ ] 12 investor logos → `public/logos/investors/`
-- [ ] Photos of Lucas and Joe → `public/photos/`
+- [ ] Photos of Lucas and Joe → save as `public/photos/lucas.jpg` and
+      `public/photos/joe.jpg` (the cards fall back to placeholder avatars
+      until these files exist)
 
 **Content placeholders (search the repo for `[` brackets):**
-- [ ] Joe's surname, title, and both contacts' email/Telegram/WhatsApp/LinkedIn → `config/contacts.ts`
+- [ ] Joe's title → `config/contacts.ts`
 - [ ] Calendly URL → `config/contacts.ts`
 - [ ] Confirm the `[48h]` response-time promise → `content/site.ts` + `config/benefits.ts`
 - [ ] Benefits 3 & 4 of the partner package → `config/benefits.ts`
