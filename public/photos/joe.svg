@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <rect width="160" height="160" fill="#1a1e26"/>
+  <circle cx="80" cy="62" r="26" fill="#39404d"/>
+  <path d="M28 140c6-30 28-44 52-44s46 14 52 44v20H28z" fill="#39404d"/>
+  <text x="80" y="150" text-anchor="middle" font-family="Arial" font-size="14" fill="#9aa4b2">J</text>
+</svg>

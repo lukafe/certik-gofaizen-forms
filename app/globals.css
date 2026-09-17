@@ -1,0 +1,84 @@
+@import "../styles/tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #0b0d10;
+}
+
+/* Marquee: pause on hover, and stand still entirely for users who
+   prefer reduced motion (the track is duplicated, so the first copy
+   shows a full static row). */
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-fade-up {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Edge fade for logo strips, like certik.com's client band */
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-pill bg-fg px-6 py-3 text-sm font-semibold text-ink-deep transition-colors duration-200 hover:bg-fg-muted;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-pill border border-line-strong px-6 py-3 text-sm font-semibold text-fg transition-colors duration-200 hover:border-fg hover:bg-white/5;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-fg-muted;
+  }
+  .section-title {
+    @apply text-3xl font-semibold tracking-tight text-fg sm:text-4xl;
+  }
+  .card {
+    @apply rounded-card border border-line bg-ink-raised transition-colors duration-200 hover:border-line-strong;
+  }
+  .field-label {
+    @apply mb-1.5 block text-sm font-medium text-fg;
+  }
+  .field-input {
+    @apply w-full rounded-lg border border-line-strong bg-ink-deep px-3.5 py-2.5 text-sm text-fg placeholder:text-fg-faint focus:border-fg focus:outline-none focus:ring-1 focus:ring-fg;
+  }
+}

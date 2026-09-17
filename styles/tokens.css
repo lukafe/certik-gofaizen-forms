@@ -1,0 +1,38 @@
+/*
+ * Design tokens — best-effort approximation of certik.com's dark theme.
+ * certik.com could not be fetched from the build environment (network
+ * egress blocked), so these values are tuned from the site's known design
+ * language: near-black sections, white/gray type, hairline card borders,
+ * white primary buttons. Re-tune against the live site's computed styles
+ * if anything looks off — everything reads from these variables.
+ */
+:root {
+  /* Backgrounds */
+  --color-bg: #0b0d10; /* main page background */
+  --color-bg-deep: #060709; /* hero / footer, one step darker */
+  --color-bg-raised: #12151a; /* cards and raised panels */
+
+  /* Foreground */
+  --color-fg: #f5f7fa;
+  --color-fg-muted: #9aa4b2;
+  --color-fg-faint: #5c6570;
+
+  /* Accent — CertiK's signal/link accent (approximate) */
+  --color-accent: #e3ff2f;
+  --color-accent-soft: rgba(227, 255, 47, 0.12);
+
+  /* Borders */
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.18);
+
+  /* Shape */
+  --radius-card: 14px;
+
+  /* Type — certik.com uses a neutral grotesk; Inter is the closest
+     widely-available match and is loaded via next/font in app/layout.tsx */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Motion */
+  --marquee-duration: 60s;
+}
