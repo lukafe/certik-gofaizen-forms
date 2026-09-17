@@ -5,7 +5,7 @@ export type Benefit = {
   highlighted?: boolean;
 };
 
-/** Partner package benefits. The [bracketed] entries are placeholders to fill in. */
+/** Partner package benefits (modeled on the CertiK × Colosseum one-pager). */
 export const benefits: Benefit[] = [
   {
     title: "20% partner discount",
@@ -16,15 +16,32 @@ export const benefits: Benefit[] = [
   {
     title: "Priority scoping call",
     description:
-      "A CertiK expert reaches out to scope your engagement within [48h] of submitting the form.",
+      "A CertiK expert reaches out within [48h] of submitting the form — a 30-minute call to understand your codebase, timeline and target markets.",
   },
   {
-    title: "[Placeholder benefit]",
-    description: "[Describe the third partner benefit here.]",
+    title: "Free regulatory scoping session",
+    description:
+      "A 60-minute session with CertiK's advisory team: which licenses you need, in which jurisdictions, and what it takes to get there.",
   },
   {
-    title: "[Placeholder benefit]",
-    description: "[Describe the fourth partner benefit here.]",
+    title: "AI Auditor credits",
+    description:
+      "AI-powered scanning for Solidity, Rust and Move. Detect vulnerabilities and ship safer code from day one, before your manual audit.",
+  },
+  {
+    title: "Skynet listing",
+    description:
+      "Once your audit is complete, your project is listed on Skynet, CertiK's security intelligence platform — 21,000+ projects monitored and 1.8M monthly users checking who's audited.",
+  },
+  {
+    title: "Audit announcement on X",
+    description:
+      "We co-announce your completed audit across CertiK's X channels, putting your security milestone in front of the broader Web3 community.",
+  },
+  {
+    title: "Dedicated points of contact",
+    description:
+      "A direct line to Lucas and Joe at CertiK throughout your engagement — no ticket queues, just answers.",
   },
 ];
 
