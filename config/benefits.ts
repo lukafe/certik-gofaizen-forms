@@ -19,9 +19,9 @@ export const benefits: Benefit[] = [
       "A CertiK expert reaches out within [48h] of submitting the form — a 30-minute call to understand your codebase, timeline and target markets.",
   },
   {
-    title: "Free regulatory scoping session",
+    title: "CertiK Compliance access",
     description:
-      "A 60-minute session with CertiK's advisory team: which licenses you need, in which jurisdictions, and what it takes to get there.",
+      "Access to CertiK Compliance, our global jurisdiction intelligence platform — licensing and regulatory requirements mapped across key markets.",
   },
   {
     title: "AI Auditor credits",
@@ -32,11 +32,6 @@ export const benefits: Benefit[] = [
     title: "Skynet listing",
     description:
       "Once your audit is complete, your project is listed on Skynet, CertiK's security intelligence platform — 21,000+ projects monitored and 1.8M monthly users checking who's audited.",
-  },
-  {
-    title: "Audit announcement on X",
-    description:
-      "We co-announce your completed audit across CertiK's X channels, putting your security milestone in front of the broader Web3 community.",
   },
   {
     title: "Dedicated points of contact",

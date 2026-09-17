@@ -32,11 +32,16 @@ export function Benefits() {
                 </p>
               </div>
             ))}
-          <div className="grid gap-6 sm:grid-cols-3">
+          {/* Centered flex-wrap keeps the grid symmetric for any card
+              count (e.g. 5 cards render as a 3 + 2 centered layout). */}
+          <div className="flex flex-wrap justify-center gap-6">
             {benefits
               .filter((b) => !b.highlighted)
               .map((benefit) => (
-                <div key={benefit.title} className="card p-8 text-center">
+                <div
+                  key={benefit.title}
+                  className="card w-full p-8 text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
+                >
                   <h3 className="text-lg font-semibold text-fg">
                     {benefit.title}
                   </h3>
