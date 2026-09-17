@@ -41,16 +41,56 @@ body {
   }
 }
 
-/* Faint data-grid backdrop (skynet.certik.com-style), fading out downward */
-.hero-grid {
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.035) 1px,
-      transparent 1px
-    ),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 56px 56px;
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 65%);
-  mask-image: linear-gradient(to bottom, black 0%, transparent 65%);
+/* Aurora light play: soft blurred glows drifting slowly behind the hero */
+.aurora {
+  position: absolute;
+  width: 40rem;
+  height: 40rem;
+  border-radius: 9999px;
+  filter: blur(90px);
+  pointer-events: none;
+  opacity: 0.5;
+}
+.aurora-a {
+  top: -14rem;
+  left: -10rem;
+  background: radial-gradient(
+    circle,
+    rgba(90, 120, 255, 0.14) 0%,
+    rgba(0, 0, 0, 0) 65%
+  );
+  animation: aurora-drift-a 22s ease-in-out infinite alternate;
+}
+.aurora-b {
+  top: -6rem;
+  right: -12rem;
+  background: radial-gradient(
+    circle,
+    rgba(227, 255, 47, 0.07) 0%,
+    rgba(0, 0, 0, 0) 65%
+  );
+  animation: aurora-drift-b 28s ease-in-out infinite alternate;
+}
+@keyframes aurora-drift-a {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(10rem, 4rem, 0) scale(1.15);
+  }
+}
+@keyframes aurora-drift-b {
+  from {
+    transform: translate3d(0, 0, 0) scale(1.1);
+  }
+  to {
+    transform: translate3d(-8rem, 6rem, 0) scale(0.95);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aurora {
+    animation: none !important;
+  }
 }
 
 /* Edge fade for logo strips, like certik.com's client band */

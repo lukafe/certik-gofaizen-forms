@@ -10,10 +10,10 @@ export type Stat = {
   label: string;
 };
 
-/** Hero stat counters — mirrors the strip on certik.com. Edit freely. */
+/** Hero stat counters — numbers as shown on certik.com. Edit freely. */
 export const stats: Stat[] = [
-  { value: 519, prefix: "$", suffix: "B", label: "Market Cap Assessed" },
-  { value: 5500, suffix: "+", label: "Clients Served" },
+  { value: 528, prefix: "$", suffix: "B", label: "Market Cap Assessed" },
+  { value: 5500, label: "Clients Served" },
   { value: 2, prefix: "$", suffix: "B", label: "Valuation" },
   { value: 1.8, suffix: "M", decimals: 1, label: "Monthly Skynet Users" },
 ];
