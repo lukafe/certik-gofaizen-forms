@@ -91,6 +91,11 @@ body {
     @apply mb-1.5 block text-sm font-medium text-fg;
   }
   .field-input {
-    @apply w-full rounded-lg border border-line-strong bg-ink-deep px-3.5 py-2.5 text-sm text-fg placeholder:text-fg-faint focus:border-fg focus:outline-none focus:ring-1 focus:ring-fg;
+    /* Fixed height so inputs and selects line up regardless of the
+       browser's intrinsic control sizing */
+    @apply h-12 w-full rounded-lg border border-line-strong bg-ink-deep px-3.5 text-sm text-fg placeholder:text-fg-faint focus:border-fg focus:outline-none focus:ring-1 focus:ring-fg;
+  }
+  textarea.field-input {
+    @apply h-auto min-h-[7rem] py-3;
   }
 }
