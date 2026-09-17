@@ -114,7 +114,7 @@ export const site = {
       { label: "About CertiK", href: "https://www.certik.com/company/about" },
       { label: "Gofaizen & Sherle", href: "https://gofaizen-sherle.com" },
       { label: "Skynet", href: "https://skynet.certik.com" },
-      { label: "Blog", href: "https://www.certik.com/resources" },
+      { label: "Blog", href: "https://www.certik.com/resources/blog" },
     ],
     socials: [
       { label: "X / Twitter", href: "https://x.com/CertiK" },

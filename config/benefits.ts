@@ -56,7 +56,7 @@ export const products: Product[] = [
   {
     name: "Penetration Testing",
     description: "Offensive security testing for apps, APIs and infrastructure.",
-    href: "https://www.certik.com/products/penetration-testing",
+    href: "https://www.certik.com/products/pentest",
   },
   {
     name: "DLT Security Solutions",
@@ -67,7 +67,7 @@ export const products: Product[] = [
     name: "VARA / MiCA & DORA Compliance",
     description:
       "Security assessments and reports regulators expect for licensing.",
-    href: "https://www.certik.com/products/regulatory-consulting",
+    href: "https://www.certik.com/products/dora-mica",
   },
   {
     name: "SkyInsights",
@@ -77,7 +77,7 @@ export const products: Product[] = [
   {
     name: "Proof of Reserves",
     description: "Independent verification of custodial asset backing.",
-    href: "https://www.certik.com/products/proof-of-reserves",
+    href: "https://www.certik.com/products/proof-of-reserves-audit",
   },
   {
     name: "Formal Verification",
